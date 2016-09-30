@@ -17,7 +17,7 @@ namespace GPS_NMEA_PARSER {
 
         private void Form1_Load(object sender, EventArgs e) {
 
-            // On form load, get a list of the open COMM ports
+            // On form load, get a list of the open COMM port
 
 
         }
