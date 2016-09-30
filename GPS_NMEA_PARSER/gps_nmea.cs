@@ -11,6 +11,9 @@ using System.IO.Ports;
 
 namespace GPS_NMEA_PARSER {
     public partial class gps_nmea : Form {
+
+        public int[] baud_rates = { 9600, 115200 };
+
         public gps_nmea() {
             InitializeComponent();
         }
@@ -30,6 +33,11 @@ namespace GPS_NMEA_PARSER {
             } else {
                 // There are no ports!
                 gps_device_comb.Items.Add("No open ports!");
+            }
+
+            // Populate the baud rate comm box
+            foreach (int rate in baud_rates) {
+                gps_baud_comb.Items.Add(rate.ToString());
             }
 
         }
