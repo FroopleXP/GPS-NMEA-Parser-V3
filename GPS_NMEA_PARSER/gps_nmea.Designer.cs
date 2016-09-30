@@ -23,21 +23,21 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(gps_nmea));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.gps_device_comb = new System.Windows.Forms.ComboBox();
             this.gps_baud_comb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.gps_comm_gateway = new System.IO.Ports.SerialPort(this.components);
+            this.gps_disconnect_btn = new System.Windows.Forms.Button();
+            this.gps_connect_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.gps_connect_btn);
+            this.groupBox1.Controls.Add(this.gps_disconnect_btn);
             this.groupBox1.Controls.Add(this.gps_device_comb);
             this.groupBox1.Controls.Add(this.gps_baud_comb);
             this.groupBox1.Controls.Add(this.label2);
@@ -45,19 +45,10 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(200, 148);
+            this.groupBox1.Size = new System.Drawing.Size(200, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connect to GPS device";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(13, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Connect to GPS";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // gps_device_comb
             // 
@@ -93,6 +84,26 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Select GPS Device";
             // 
+            // gps_disconnect_btn
+            // 
+            this.gps_disconnect_btn.Location = new System.Drawing.Point(102, 111);
+            this.gps_disconnect_btn.Name = "gps_disconnect_btn";
+            this.gps_disconnect_btn.Size = new System.Drawing.Size(85, 23);
+            this.gps_disconnect_btn.TabIndex = 2;
+            this.gps_disconnect_btn.Text = "Disconnect";
+            this.gps_disconnect_btn.UseVisualStyleBackColor = true;
+            this.gps_disconnect_btn.Click += new System.EventHandler(this.gps_disconnect_btn_Click);
+            // 
+            // gps_connect_btn
+            // 
+            this.gps_connect_btn.Location = new System.Drawing.Point(13, 112);
+            this.gps_connect_btn.Name = "gps_connect_btn";
+            this.gps_connect_btn.Size = new System.Drawing.Size(83, 23);
+            this.gps_connect_btn.TabIndex = 1;
+            this.gps_connect_btn.Text = "Connect";
+            this.gps_connect_btn.UseVisualStyleBackColor = true;
+            this.gps_connect_btn.Click += new System.EventHandler(this.gps_connect_btn_Click);
+            // 
             // gps_nmea
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,12 +123,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox gps_device_comb;
         private System.Windows.Forms.ComboBox gps_baud_comb;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.IO.Ports.SerialPort gps_comm_gateway;
+        private System.Windows.Forms.Button gps_connect_btn;
+        private System.Windows.Forms.Button gps_disconnect_btn;
     }
 }
 
