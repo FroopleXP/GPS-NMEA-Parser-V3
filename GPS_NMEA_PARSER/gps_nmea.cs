@@ -18,8 +18,21 @@ namespace GPS_NMEA_PARSER {
         private void Form1_Load(object sender, EventArgs e) {
 
             // On form load, get a list of the open COMM port
+            string[] comm_ports = SerialPort.GetPortNames();
+            
+            // Checking that there are open ports!
+            if (comm_ports.Length > 0) {
+                // There are open ports
+                foreach (string port in comm_ports) {
+                    gps_device_comb.Items.Add(port);
+                }
 
+            } else {
+                // There are no ports!
+                gps_device_comb.Items.Add("No open ports!");
+            }
 
         }
+
     }
 }
